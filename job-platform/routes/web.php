@@ -13,6 +13,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+// Public Routes
+Route::get('/jobs', [JobController::class, 'index'])->name('jobs.index');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -22,8 +26,10 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-
-
+    Route::resource('jobs', JobController::class);
+//     Route::resource('user-profiles', UserProfileController::class);
+//     Route::resource('employer-profiles', EmployerProfileController::class);
+//     Route::resource('job-applications', JobApplicationController::class);
 
 });
 
