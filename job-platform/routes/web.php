@@ -27,9 +27,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::resource('jobs', JobController::class);
-//     Route::resource('user-profiles', UserProfileController::class);
-//     Route::resource('employer-profiles', EmployerProfileController::class);
-//     Route::resource('job-applications', JobApplicationController::class);
+    Route::resource('user-profiles', UserProfileController::class);
+    Route::resource('employer-profiles', EmployerProfileController::class);
+    Route::resource('job-applications', JobApplicationController::class);
 
 });
 
