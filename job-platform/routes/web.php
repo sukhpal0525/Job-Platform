@@ -8,11 +8,8 @@ use App\Http\Controllers\EmployerProfileController;
 use App\Http\Controllers\JobApplicationController;
 use App\Http\Controllers\JobController;
 
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
+// Home Route
+Route::get('/', [JobController::class, 'index'])->name('home');
 
 // Public Routes
 Route::get('/jobs', [JobController::class, 'index'])->name('jobs.index');
@@ -32,7 +29,5 @@ Route::middleware('auth')->group(function () {
     Route::resource('job-applications', JobApplicationController::class);
 
 });
-
-
 
 require __DIR__.'/auth.php';

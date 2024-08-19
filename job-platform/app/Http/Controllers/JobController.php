@@ -3,18 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Job;
 
 class JobController extends Controller
 {
     public function index()
     {
         $jobs = Job::all();
-        return view('job.index', compact('jobs'));
+        return view('jobs.index', compact('jobs'));
     }
 
     public function create()
     {
-        return view('job.create');
+        return view('jobs.create');
     }
 
     public function store(Request $request)
@@ -23,11 +24,11 @@ class JobController extends Controller
             'title' => 'required',
             'description' => 'required',
             'salary' => 'required',
-            'application-deadline' => 'required',
+            'application-deadline' => 'required|date',
         ]);
 
         Job::create($validated);
-        return redirect()->route('job.index');
+        return redirect()->route('jobs.index');
     }
 
     public function edit(Job $job)
