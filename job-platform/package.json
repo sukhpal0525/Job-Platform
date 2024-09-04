@@ -1,7 +1,6 @@
 {
     "private": true,
     "devDependencies": {
-        "alpinejs": "^3.4.2",
         "axios": "^1.6.4",
         "bootstrap": "^5.1.3"
     }

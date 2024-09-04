@@ -7,12 +7,25 @@ use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\EmployerProfileController;
 use App\Http\Controllers\JobApplicationController;
 use App\Http\Controllers\JobController;
-
-// Home Route
-Route::get('/', [JobController::class, 'index'])->name('home');
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 
 // Public Routes
-Route::get('/jobs', [JobController::class, 'index'])->name('jobs.index');
+Route::get('/jobs/results', [JobController::class, 'results'])->name('jobs.results');
+
+Route::get('/admin', [AdminController::class, 'index'])->name('adminindex');
+
+// Home Route
+Route::get('/', [JobController::class, 'index'])->name('index');
+
+Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('register');
+Route::post('/register', [RegisterController::class, 'register']);
+
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
+
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -29,5 +42,3 @@ Route::middleware('auth')->group(function () {
     Route::resource('job-applications', JobApplicationController::class);
 
 });
-
-require __DIR__.'/auth.php';
