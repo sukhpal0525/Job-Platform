@@ -10,7 +10,7 @@ class JobController extends Controller
     public function index()
     {
         $jobs = Job::all();
-        return view('jobs.index', compact('jobs'));
+        return view('index', compact('jobs'));
     }
 
     public function create()
@@ -28,7 +28,7 @@ class JobController extends Controller
         ]);
 
         Job::create($validated);
-        return redirect()->route('jobs.index');
+        return redirect()->route('index');
     }
 
     public function edit(Job $job)
@@ -46,12 +46,17 @@ class JobController extends Controller
         ]);
 
         $job->update($validated);
-        return redirect()->route('jobs.index');
+        return redirect()->route('index');
     }
 
     public function destroy(Job $job)
     {
         $job->delete();
-        return redirect()->route('jobs.index');
+        return redirect()->route('index');
+    }
+
+    public function results()
+    {
+      return view('jobs.results');
     }
 }
