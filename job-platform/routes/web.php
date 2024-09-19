@@ -9,11 +9,13 @@ use App\Http\Controllers\JobApplicationController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Admin\AdminController;
+
 
 // Public Routes
 Route::get('/jobs/results', [JobController::class, 'results'])->name('jobs.results');
 
-Route::get('/admin', [AdminController::class, 'index'])->name('adminindex');
+Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 
 // Home Route
 Route::get('/', [JobController::class, 'index'])->name('index');
