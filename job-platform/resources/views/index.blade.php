@@ -59,7 +59,7 @@
                 </ul>
             </nav>
             <div class="col-md-3 text-end">
-                <button class="sign-in btn text-white">Sign In</button>
+                <button href="{{ route('login') }}" class="sign-in btn text-white">Sign In</button>
             </div>
         </div>
     </header>
