@@ -3,38 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hassle-Free Time Tracking</title>
+    <title>Job Platform</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
-    <style>
-        /* Move body background to Bootstrap */
-        .cta {
-            background-color: #6A5ACD;
-            border-radius: 8px;
-            transition: transform 0.3s;
-        }
-
-        .cta:hover {
-            transform: translateY(-3px);
-        }
-
-        footer {
-            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05);
-        }
-
-        .sign-in {
-            background: linear-gradient(135deg, #6A5ACD, #8A2BE2);
-            border-radius: 50px;
-            padding: 0.6rem 1.5rem;
-            transition: all 0.4s ease;
-        }
-
-        .sign-in:hover {
-            background-color: #5a4db2;
-        }
-    </style>
 </head>
+
 <body class="d-flex flex-column min-vh-100 bg-light">
     <!-- Header Section -->
     <header class="container-fluid py-3 bg-white shadow-sm sticky-top">
@@ -59,7 +32,7 @@
                 </ul>
             </nav>
             <div class="col-md-3 text-end">
-                <button href="{{ route('login') }}" class="sign-in btn text-white">Sign In</button>
+                <button href="" class="sign-in btn text-white">Sign In</button>
             </div>
         </div>
     </header>
