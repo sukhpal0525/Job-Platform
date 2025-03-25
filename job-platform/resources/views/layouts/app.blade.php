@@ -34,21 +34,21 @@
             <ul class="navbar-nav ms-auto">
                 @guest
                     <li class="nav-item">
-                        <a class="btn btn-outline-light me-2" href="{{ route('register') }}">Sign Up</a>
+                        <a class="btn btn-outline-light me-2" href="">Sign Up</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-primary" href="{{ route('login') }}">Login</a>
+                        <a class="btn btn-primary" href="">Login</a>
                     </li>
                 @else
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="{{ route('dashboard') }}">Dashboard</a>
+                        <a class="nav-link text-white" href="">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="{{ route('logout') }}"
+                        <a class="nav-link text-white" href=""
                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             Logout
                         </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        <form id="logout-form" action="" method="POST" class="d-none">
                             @csrf
                         </form>
                     </li>
